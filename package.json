@@ -1,15 +1,36 @@
 {
-  "name": "fundraising",
+  "name": "@ablack/fundraising",
+  "version": "1.0.0",
   "private": true,
+  "author": "Aragon Assocation <legal@aragon.org>",
+  "contributors": [
+    "Olivier Sarrouy <olivier@aragon.black>",
+    "Xavier Seignard <xavier@aragon.black>",
+    "Deam Hansen <deam@aragon.black>",
+    "Cory Dickson <cory@aragon.black>",
+    "Billy Rennekamp <billy@bin.am>"
+  ],
+  "license": "(GPL-3.0-or-later OR AGPL-3.0-or-later)",
+  "homepage": "https://github.com/AragonBlack/fundraising",
   "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "fix": "rm -rf **/websocket/.git",
-    "clean": "lerna clean"
+    "install": "npm run bootstrap",
+    "bootstrap": "lerna bootstrap --hoist --nohoist=@aragon/os --nohoist=@aragon/apps-* --nohoist=@aragon/ppf-contracts --nohoist=@aragon/test-helpers --nohoist=@aragon/templates-shared --nohoist=@ablack/fundraising-*",
+    "fix": "rm -rfv **/websocket/.git",
+    "update": "lernaupdate",
+    "clean": "lerna clean",
+    "lint": "lerna run --scope=@ablack/fundraising-* lint",
+    "test": "npm run test:all",
+    "test:all": "lerna run --scope=@ablack/fundraising-* --concurrency=1 --stream test",
+    "test:all:gas": "lerna run --scope=@ablack/fundraising-* --concurrency=1 --stream test:gas",
+    "test:aragon-fundraising": "lerna run --scope=@ablack/fundraising-aragon-fundraising --stream test",
+    "test:batched-bancor-market-maker": "lerna run --scope=@ablack/fundraising-batched-bancor-market-maker --stream test",
+    "test:tap": "lerna run --scope=@ablack/fundraising-tap --stream test",
+    "test:multisig-template": "lerna run --scope=@ablack/fundraising-multisig-template --stream test",
+    "publish": "lerna run --scope=@ablack/fundraising-* --concurrency=1 --stream publish"
   },
   "devDependencies": {
-    "lerna": "^3.4.3"
-  },
-  "dependencies": {
-    "@aragon/os": "^4.2.0"
+    "lerna": "^3.4.3",
+    "lerna-update-wizard": "^0.16.0",
+    "prettier": "^1.16.4"
   }
 }

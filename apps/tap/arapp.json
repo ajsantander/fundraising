@@ -1,0 +1,63 @@
+{
+  "status": "experimental",
+  "environments": {
+    "default": {
+      "registry": "0x5f6f7e8cc7346a11ca2def8f827b7a0b612c56a1",
+      "appName": "tap.aragonpm.eth",
+      "network": "rpc"
+    },
+    "rinkeby": {
+      "registry": "0x98Df287B6C145399Aaa709692c8D308357bC085D",
+      "appName": "tap.aragonpm.eth",
+      "network": "rinkeby"
+    },
+    "staging": {
+      "registry": "0xfe03625ea880a8cba336f9b5ad6e15b0a3b5a939",
+      "appName": "tap.aragonpm.eth",
+      "network": "rinkeby"
+    }
+  },
+  "roles": [
+    {
+      "name": "Update controller address",
+      "id": "UPDATE_CONTROLLER_ROLE",
+      "params": []
+    },
+    {
+      "name": "Update reserve address",
+      "id": "UPDATE_RESERVE_ROLE",
+      "params": []
+    },
+    {
+      "name": "Update beneficiary address",
+      "id": "UPDATE_BENEFICIARY_ROLE",
+      "params": []
+    },
+    {
+      "name": "Update maximum tap increase percentage",
+      "id": "UPDATE_MAXIMUM_TAP_INCREASE_PCT_ROLE",
+      "params": []
+    },
+    {
+      "name": "Add tapped tokens",
+      "id": "ADD_TAPPED_TOKEN_ROLE",
+      "params": []
+    },
+    {
+      "name": "Remove tapped tokens",
+      "id": "REMOVE_TAPPED_TOKEN_ROLE",
+      "params": []
+    },
+    {
+      "name": "Update tapped tokens settings",
+      "id": "UPDATE_TAPPED_TOKEN_ROLE",
+      "params": []
+    },
+    {
+      "name": "Transfer funds from the reserve to the beneficiary",
+      "id": "WITHDRAW_ROLE",
+      "params": []
+    }
+  ],
+  "path": "contracts/Tap.sol"
+}

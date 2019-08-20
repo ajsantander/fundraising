@@ -1,0 +1,32 @@
+{
+  "name": "@ablack/fundraising-bancor-formula",
+  "version": "0.1.0",
+  "author": "Aragon Assocation <legal@aragon.org>",
+  "contributors": [
+    "Olivier Sarrouy <olivier@aragon.black>",
+    "Billy Rennekamp <billy@bin.am>"
+  ],
+  "license": "(GPL-3.0-or-later OR AGPL-3.0-or-later)",
+  "homepage": "https://github.com/AragonBlack/fundraising",
+  "scripts": {
+    "compile": "truffle compile",
+    "abi:extract": "truffle-extract --output abi/ --keys abi",
+    "prepublishOnly": "truffle compile --all && npm run abi:extract -- --no-compile",
+    "apm:prepublish": "npm run compile",
+    "apm:publish:rpc": "aragon apm publish major --environment default --skip-confirmation true --propagate-content false",
+    "publish": "npm run apm:publish:rpc"
+  },
+  "files": [
+    "/abi",
+    "/arapp.json",
+    "/build",
+    "/contracts"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@aragon/cli": "^6.2.5",
+    "@aragon/os": "4.2.1",
+    "truffle": "4.1.14",
+    "truffle-extract": "^1.2.1"
+  }
+}
